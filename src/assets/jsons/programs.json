@@ -1,0 +1,322 @@
+[
+  {
+     "College":"College of Engineering",
+     "School":"School of Applied Engineering",
+     "Department":"Civil Engineering",
+     "Programme":"Civil Engineering",
+     "Option":"",
+     "Degree":"B.Eng"
+  },
+  {
+     "College":"College of Engineering",
+     "School":"School of Applied Engineering",
+     "Department":"Electrical and Information Engineering",
+     "Programme":"Computer Engineering",
+     "Option":"",
+     "Degree":"B.Eng"
+  },
+  {
+     "College":"College of Engineering",
+     "School":"School of Applied Engineering",
+     "Department":"Electrical and Information Engineering",
+     "Programme":"Electrical and Electronics Engineering",
+     "Option":"",
+     "Degree":"B.Eng"
+  },
+  {
+     "College":"College of Engineering",
+     "School":"School of Applied Engineering",
+     "Department":"Electrical and Information Engineering",
+     "Programme":"Information and Communication Engineering",
+     "Option":"",
+     "Degree":"B.Eng"
+  },
+  {
+     "College":"College of Engineering",
+     "School":"School of Applied Engineering",
+     "Department":"Mechanical Engineering",
+     "Programme":"Mechanical Engineering",
+     "Option":"",
+     "Degree":"B.Eng"
+  },
+  {
+     "College":"College of Engineering",
+     "School":"School of Chemical and Petroleum Engineering",
+     "Department":"Chemical Engineering",
+     "Programme":"Chemical Engineering",
+     "Option":"",
+     "Degree":"B.Eng"
+  },
+  {
+     "College":"College of Engineering",
+     "School":"School of Chemical and Petroleum Engineering",
+     "Department":"Petroleum Engineering",
+     "Programme":"Petroleum Engineering",
+     "Option":"",
+     "Degree":"B.Eng"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Environmental Sciences",
+     "Department":"Architecture",
+     "Programme":"Architecture",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Environmental Sciences",
+     "Department":"Building Technology",
+     "Programme":"Building Technology",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Environmental Sciences",
+     "Department":"Estate Management",
+     "Programme":"Estate Management",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Natural and Applied Sciences",
+     "Department":"Biological Sciences",
+     "Programme":"Applied Biology and Biotechnology",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Natural and Applied Sciences",
+     "Department":"Biological Sciences",
+     "Programme":"Biochemistry",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Natural and Applied Sciences",
+     "Department":"Biological Sciences",
+     "Programme":"Microbiology",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Natural and Applied Sciences",
+     "Department":"Chemistry",
+     "Programme":"Chemistry",
+     "Option":"Industrial Chemistry",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Natural and Applied Sciences",
+     "Department":"Chemistry",
+     "Programme":"Chemistry",
+     "Option":"Analytical/ Environmental Chemistry",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Natural and Applied Sciences",
+     "Department":"Chemistry",
+     "Programme":"Chemistry",
+     "Option":"Materials/ Polymer Chemistry",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Natural and Applied Sciences",
+     "Department":"Computer and Information Sciences",
+     "Programme":"Computer Science",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Natural and Applied Sciences",
+     "Department":"Computer and Information Sciences",
+     "Programme":"Management Information System",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Natural and Applied Sciences",
+     "Department":"Mathematics",
+     "Programme":"Industrial Mathematics",
+     "Option":"Pure Mathematics",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Natural and Applied Sciences",
+     "Department":"Mathematics",
+     "Programme":"Industrial Mathematics",
+     "Option":"Mathematics and Computer Science",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Natural and Applied Sciences",
+     "Department":"Mathematics",
+     "Programme":"Industrial Mathematics",
+     "Option":"Mathematics and Statistics",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Natural and Applied Sciences",
+     "Department":"Physics",
+     "Programme":"Industrial Physics",
+     "Option":"Applied Geophysics",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Natural and Applied Sciences",
+     "Department":"Physics",
+     "Programme":"Industrial Physics",
+     "Option":"Electronics and IT Applications",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Science and Technology",
+     "School":"School of Natural and Applied Sciences",
+     "Department":"Physics",
+     "Programme":"Industrial Physics",
+     "Option":"Renewable Energy",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Business and Social Sciences",
+     "School":"School of Business",
+     "Department":"Accounting",
+     "Programme":"Accounting",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Business and Social Sciences",
+     "School":"School of Business",
+     "Department":"Banking and Finance",
+     "Programme":"Banking and Finance",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Business and Social Sciences",
+     "School":"School of Business",
+     "Department":"Business Management",
+     "Programme":"Business Administration",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Business and Social Sciences",
+     "School":"School of Business",
+     "Department":"Business Management",
+     "Programme":"Industrial Relations and Human Resource Management",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Business and Social Sciences",
+     "School":"School of Business",
+     "Department":"Business Management",
+     "Programme":"Marketing",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Business and Social Sciences",
+     "School":"School of Business",
+     "Department":"Business Management",
+     "Programme":"Entrepreneurship",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Business and Social Sciences",
+     "School":"School of Social Sciences",
+     "Department":"Economics",
+     "Programme":"Demography and Social Statistics",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Business and Social Sciences",
+     "School":"School of Social Sciences",
+     "Department":"Economics",
+     "Programme":"Economics",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Business and Social Sciences",
+     "School":"School of Social Sciences",
+     "Department":"Mass Communication",
+     "Programme":"Mass Communication",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Business and Social Sciences",
+     "School":"School of Social Sciences",
+     "Department":"Sociology",
+     "Programme":"Sociology",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Leadership Development Studies",
+     "School":"School of Human Resource Development",
+     "Department":"Political Science and International Relations",
+     "Programme":"International Relations",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Leadership Development Studies",
+     "School":"School of Human Resource Development",
+     "Department":"Political Science and International Relations",
+     "Programme":"Policy and Strategic Studies",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Leadership Development Studies",
+     "School":"School of Human Resource Development",
+     "Department":"Political Science and International Relations",
+     "Programme":"Political Science",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Leadership Development Studies",
+     "School":"School of Human Resource Development",
+     "Department":"Psychology",
+     "Programme":"Psychology",
+     "Option":"",
+     "Degree":"B.Sc"
+  },
+  {
+     "College":"College of Leadership Development Studies",
+     "School":"School of Leadership Development",
+     "Department":"Languages and General Studies",
+     "Programme":"English",
+     "Option":"",
+     "Degree":"B.A"
+  },
+  {
+     "College":"College of Leadership Development Studies",
+     "School":"School of Leadership Development",
+     "Department":"Leadership Studies",
+     "Programme":"Leadership",
+     "Option":"",
+     "Degree":"Certificate/ Diploma"
+  }
+]

@@ -1,13 +1,23 @@
 {
   "name": "cuc-front",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5",
+    "env-cmd": "^10.1.0",
+    "flutterwave-react-v3": "^1.0.9",
+    "font-awesome": "^4.7.0",
+    "fs-extra": "^9.0.1",
+    "mdbreact": "^5.0.1",
     "react": "^17.0.1",
+    "react-device-detect": "^1.15.0",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
@@ -34,5 +44,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.1"
   }
 }
