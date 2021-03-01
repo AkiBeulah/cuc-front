@@ -170,7 +170,7 @@ function Header(props) {
                     </div>
                   </BrowserView>
                   <MobileView>
-                    <MDBNavbar color="primary-color" className="no-shadow mobile-side-nav" dark expand="md" scrolling fixed="bottom">
+                    <MDBNavbar color="primary-color" className="no-shadow bg-primary mobile-side-nav" dark expand="md" scrolling fixed="bottom">
                       <MDBContainer>
                         <div role="tab" onClick={() => setActiveItem("announcements")} className={props.activeItem === "announcements" ? "active-mobile cursor-pointer animate text-white h6 pt-0 pb-3 pl-2" : "h6 cursor-pointer animate text-white pt-1 pb-3 pl-2"}><MDBIcon className="btn-xl pr-3 pt-3" icon="bell" /></div>
                         <div role="tab" onClick={() => setActiveItem("query")} className={props.activeItem === "query" ? "active-mobile cursor-pointer animate text-white h6 pt-0 pb-3 pl-2" : "h6 cursor-pointer animate text-white pt-1 pb-3 pl-2"}><MDBIcon className="btn-xl pr-3 pt-3" icon="search" /></div>
