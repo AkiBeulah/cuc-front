@@ -27,7 +27,7 @@ const CUPay = (props) => {
   useEffect(() => { updateDetails() }, [])
 
   const config = {
-    public_key: process.env.REACT_APP_PAYMENT_API_KEY,
+    public_key: "FLWPUBK_TEST-6b02984dee60a6a527e167e1df8121d7-X",
     tx_ref: Date.now() + "/" + props.student.uid,
     amount: 0,
     currency: 'NGN',
