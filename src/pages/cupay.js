@@ -1,13 +1,14 @@
 import { useFlutterwave } from 'flutterwave-react-v3'
 import {
-  MDBBtn, MDBCard, MDBCardHeader,
+  MDBBtn, MDBCard, MDBCardBody, MDBCardHeader,
   MDBCol, MDBContainer,
-  MDBIcon, MDBListGroup, MDBListGroupItem, MDBModal, MDBRow
+  MDBIcon, MDBInput, MDBListGroup, MDBListGroupItem, MDBModal, MDBRow
 } from "mdbreact"
 import React, { useEffect, useState } from 'react'
 import authHeader from '../services/authHeader'
 import UserServices from '../services/user.services'
 
+import { MobileView, BrowserView } from 'react-device-detect'
 
 
 const CUPay = (props) => {
@@ -47,18 +48,18 @@ const CUPay = (props) => {
 
   return (
     <>
-      <MDBCard className="card-rounded side-nav-scrolling no-scroll-bar">
-        <MDBContainer className="bg-white rounded page-size-x-header p-5 card-rounded">
-          <div className="w-100 d-flex flex-row flex-start">
-            <div className="w-25">
-              <span style={{ fontSize: "1.5rem" }} className="align-top" dangerouslySetInnerHTML={{ __html: "&#8358;" }} />
-              <span style={{ fontSize: "2.4rem" }}>{balance.toFixed(2)}</span>
-            </div>
-            <div className="vertical-divider bg-primary" />
-            <div className="d-flex flex-row">
-              <MDBBtn
-                onClick={() => {
-                  try {
+      <BrowserView>
+        <MDBCard className="card-rounded side-nav-scrolling no-scroll-bar">
+          <MDBContainer className="bg-white rounded page-size-x-header p-5 card-rounded">
+            <div className="w-100 d-flex flex-row flex-start">
+              <div className="w-25">
+                <span style={{ fontSize: "1.5rem" }} className="align-top" dangerouslySetInnerHTML={{ __html: "&#8358;" }} />
+                <span style={{ fontSize: "2.4rem" }}>{balance.toFixed(2)}</span>
+              </div>
+              <div className="vertical-divider bg-primary" />
+              <div className="d-flex flex-row">
+                <MDBBtn
+                  onClick={() => {
                     handleFlutterPayment({
                       callback: (resp) => {
                         UserServices.createTransactionHistory(
@@ -73,62 +74,163 @@ const CUPay = (props) => {
                         })
                       }
                     })
-                  } catch (e) {
-                    alert('Please Check Your Internet Connection and Try Again.')
-                  }
+                  }}
+                  className="ml-5 no-shadow fw-bold text-nowrap font-1 waves-light waves-effect" color="primary" size="xl"
+                >
+                  Fund Wallet
+              </MDBBtn>
+
+                <MDBBtn
+                  className="ml-5 no-shadow fw-bold text-nowrap font-1 waves-light waves-effect" color="primary" size="xl"
+                  onClick={() => setCUPayModal(true)}
+                >
+                  <MDBIcon icon="id-card" className="font-1" />
+                </MDBBtn>
+              </div>
+            </div>
+
+            <MDBCard className="mt-5 mb-5">
+              <MDBCardHeader className="d-flex flex-row justify-content-between">
+                <div>ACTIVITY</div>
+                <div>VIEW ALL</div>
+              </MDBCardHeader>
+              <MDBListGroup>
+                {
+                  tHistory.map(item => (
+                    <MDBListGroupItem key={item.transaction_id}>
+                      <MDBRow>
+                        <MDBCol className="d-flex text-center flex-row align-items-center" col={10}>
+                          <MDBIcon
+                            className={item.transaction_type === "credit" ? "color-success trans-icon" : "trans-icon color-danger"}
+                            icon={item.transaction_type === "debit" ? "arrow-up" : "arrow-down"}
+                          />
+                          <div>{item.transaction_title}</div>
+                        </MDBCol>
+                        <MDBCol col={2}>
+                          <div className="text-right fw-bold">
+                            <span dangerouslySetInnerHTML={{ __html: "&#8358;" }} />
+                            {item.amount}
+                          </div>
+                          <div className="text-right">{new Date(item.created_at).toDateString()}</div>
+                        </MDBCol>
+                      </MDBRow>
+                    </MDBListGroupItem>
+                  ))
+                }
+              </MDBListGroup>
+            </MDBCard>
+
+          </MDBContainer>
+        </MDBCard>
+      </BrowserView>
+
+      <MobileView>
+        <MDBCard className="h-100">
+          <MDBContainer className="bg-white rounded page-size-x-header p-2">
+            <span style={{ fontSize: ".8rem" }}>Total Balance</span>
+            <div className="w-100 d-flex flex-row flex-start">
+              <div className="w-100">
+                <span style={{ fontSize: ".8rem" }} className="align-top" dangerouslySetInnerHTML={{ __html: "&#8358;" }} />
+                <span style={{ fontSize: "1.8rem" }}>{balance.toFixed(2)}</span>
+              </div>
+            </div>
+            <div className="w-100 d-flex flex-row justify-content-start">
+              <MDBBtn
+                onClick={() => {
+                  handleFlutterPayment({
+                    callback: (resp) => {
+                      UserServices.createTransactionHistory(
+                        resp.amount,
+                        resp.flw_ref,
+                        resp.tx_ref,
+                        resp.transaction_id,
+                        "Funded CUPay Wallet"
+                      ).then(resp => {
+                        authHeader.updateHeaders(resp.headers)
+                        updateDetails()
+                      })
+                    }
+                  })
                 }}
-                className="ml-5 no-shadow fw-bold btn-rounded text-nowrap font-1 waves-light waves-effect" color="primary" size="xl"
+
+                className="no-shadow fw-bold text-nowrap font-1 waves-light waves-effect" color="primary" size="xl"
               >
                 Fund Wallet
               </MDBBtn>
-
               <MDBBtn
-                className="ml-5 no-shadow fw-bold btn-rounded text-nowrap font-1 waves-light waves-effect" color="primary" size="xl"
-                onClick={ ()=> setCUPayModal(true)}
-                >
-                  <MDBIcon icon="id-card" className="font-1"/>                
+                className="no-shadow fw-bold font-1 waves-light waves-effect" color="primary" size="xl"
+                onClick={() => setCUPayModal(true)}
+              >
+                <MDBIcon icon="id-card" className="font-1" />
               </MDBBtn>
             </div>
-          </div>
 
-          <MDBCard className="mt-5 mb-5">
-            <MDBCardHeader className="d-flex flex-row justify-content-between">
-              <div>ACTIVITY</div>
-              <div>VIEW ALL</div>
-            </MDBCardHeader>
-            <MDBListGroup>
-              {
-                tHistory.map(item => (
-                  <MDBListGroupItem key={item.transaction_id}>
-                    <MDBRow>
-                      <MDBCol className="d-flex text-center flex-row align-items-center" col={10}>
-                        <MDBIcon
-                          className={item.transaction_type === "credit" ? "color-success trans-icon" : "trans-icon color-danger"}
-                          icon={item.transaction_type === "debit" ? "arrow-up" : "arrow-down"}
-                        />
-                        <div>{item.transaction_title}</div>
-                      </MDBCol>
-                      <MDBCol col={2}>
-                        <div className="text-right fw-bold">
-                          <span dangerouslySetInnerHTML={{ __html: "&#8358;" }} />
-                          {item.amount}
-                        </div>
-                        <div className="text-right">{new Date(item.created_at).toDateString()}</div>
-                      </MDBCol>
-                    </MDBRow>
-                  </MDBListGroupItem>
-                ))
-              }
-            </MDBListGroup>
-          </MDBCard>
+            <MDBCard className="mt-2 w-100">
+              <MDBCardHeader className="d-flex flex-row no-shadow justify-content-between">
+                <div style={{ fontSize: ".72rem" }}>ACTIVITY</div>
+                <div style={{ fontSize: ".72rem" }}>VIEW ALL</div>
+              </MDBCardHeader>
+              <MDBListGroup>
+                {
+                  tHistory.map(item => (
+                    <MDBListGroupItem key={item.transaction_id}>
+                      <MDBRow>
+                        <MDBCol className="d-flex text-center flex-row align-items-center" col={10}>
+                          <MDBIcon
+                            className={item.transaction_type === "credit" ? "color-success trans-icon" : "trans-icon color-danger"}
+                            icon={item.transaction_type === "debit" ? "arrow-up" : "arrow-down"}
+                          />
+                          <div>{item.transaction_title}</div>
+                        </MDBCol>
+                        <MDBCol col={2}>
+                          <div className="text-right fw-bold">
+                            <span dangerouslySetInnerHTML={{ __html: "&#8358;" }} />
+                            {item.amount}
+                          </div>
+                          <div className="text-right">{new Date(item.created_at).toDateString()}</div>
+                        </MDBCol>
+                      </MDBRow>
+                    </MDBListGroupItem>
+                  ))
+                }
+              </MDBListGroup>
+            </MDBCard>
 
-        </MDBContainer>
-      </MDBCard>
+          </MDBContainer>
+        </MDBCard>
 
-      <MDBModal className="w-75" isOpen={props.cuPayModal} toggle={() => props.setSettingsModal(!props.setCUPayModal)}>
-        <MDBContainer>
-          
-        </MDBContainer>
+      </MobileView>
+      <MDBModal isOpen={cuPayModal} className="justify-content-center" toggle={() => setCUPayModal(false)}>
+        <MDBCard>
+          <MDBCardBody>
+            <table width="100%">
+              <tr>
+                <td>
+                  Card Enabled
+                </td>
+                <td>
+                  <MDBInput
+                    type="checkbox"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Transaction Limit
+                </td>
+                <td>
+                  <MDBInput
+                    type="checkbox"
+                  />
+                  <MDBInput
+                    className="w-75"
+                    type="Number"
+                  />
+                </td>
+              </tr>
+            </table>
+          </MDBCardBody>
+        </MDBCard>
       </MDBModal>
     </>
   )

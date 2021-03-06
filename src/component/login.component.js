@@ -43,31 +43,32 @@ function LoginComponent() {
           </> : ""}
 
         <form className="mx-auto-alt w-100" onSubmit={(e) => submitLoginRequest(e)}>
-            <MDBInput
-              label="Email or Username"
-              group type="email"
-              className={isMobile ? "mobile-input" : ""}
-              validate error="wrong"
-              success="right"
-              onChange={(e) => setEmail(e.target.value)}
-            />
+          <MDBInput
+            label="Email or Username"
+            group type="email"
+            className={isMobile ? "mobile-input" : ""}
+            validate error="wrong"
+            success="right"
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-            <MDBInput
-              label="Password"
-              className={isMobile ? "mobile-input" : ""}
-              group
-              type="password"
-              validate
-              onChange={(e) => setPassword(e.target.value)}
-            />
+          <MDBInput
+            label="Password"
+            className={isMobile ? "mb-0" : ""}
+            group
+            type="password"
+            validate
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <div onClick={() => document.location.href = "/register"} className="w-100 text-right">Forgot Password?</div>
 
-          <div className="text-center w-100 mt-6">
-            <MDBBtn 
-            color="primary" 
-            className={isMobile ? "no-shadow fw-bold w-100 btn-xl-form" : "no-shadow fw-bold"} 
-            type="submit"
-            disabled={loading}  
-          >
+          <div className={isMobile ? "text-center w-100 mt-3" : "text-center w-100 mt-6"}>
+            <MDBBtn
+              color="primary"
+              className={isMobile ? "no-shadow fw-bold w-100" : "no-shadow fw-bold"}
+              type="submit"
+              disabled={loading}
+            >
               {loading ?
                 <div className="spinner-border spinner-border-sm" role="status">
                   <span className="sr-only">Loading...</span>
@@ -78,6 +79,7 @@ function LoginComponent() {
             </MDBBtn>
           </div>
         </form>
+        <div className="w-100 text-center mt-1"><a className="w-100 text-left" href="/register">Don't have an account? <u>Sign Up</u></a></div>
       </MDBContainer>
     </>
   )

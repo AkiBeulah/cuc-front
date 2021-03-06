@@ -1,6 +1,7 @@
-import { MDBBtn, MDBCol, MDBContainer, MDBRow } from "mdbreact";
 import React, { useState } from 'react';
-import { BrowserView, isBrowser, MobileOnlyView } from 'react-device-detect';
+
+import { MDBBtn, MDBCol, MDBContainer, MDBRow } from "mdbreact";
+import { BrowserView, isBrowser, MobileView } from 'react-device-detect';
 import studying from '../assets/images/pexels.jpg';
 
 
@@ -39,18 +40,15 @@ const Home = () => {
           </MDBRow>
         </BrowserView>
 
-        <MobileOnlyView viewClassName="h-100 d-flex flex-column justify-content-center align-items-center">
-          <h1 className="text-capitalize display-1 font-weight-bolder">Lorem ipsum dolor sit amet.</h1>
-          <h1>Amett</h1>
-          <h3 className="text-center">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque earum quod Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Reiciendis exercitationem ut magnam. quas. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Temporibus, repellendus hic labore sunt incidunt voluptatum dignissimos natus quod totam, impedit libero.
-          </h3>
+        <MobileView viewClassName="h-100 d-flex flex-column justify-content-center align-items-center">
+          <h6 className="font-weight-bolder display-4">Welcome to a SOLUTION <br /></h6>
+          <p className="text-center">
+            Covenant University Connect is an information dissemination and student-life management tool, with a goal to provide easy access to information tailored for the user’s experience. The platform is fully customizable, and integratable with some of the school’s standing infrastructure.
+           </p>
           <MDBBtn className="no-shadow fw-bold text-nowrap font-1 w-50 waves-light waves-effect" color="primary" size="xl">
             Sign Up To Begin
             </MDBBtn>
-        </MobileOnlyView>
+        </MobileView>
       </MDBContainer>
 
       {/* <div className="w-100 bg-white">

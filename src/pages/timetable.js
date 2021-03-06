@@ -1,5 +1,6 @@
 import { MDBListGroup, MDBListGroupItem, MDBNav, MDBNavItem, MDBNavLink, MDBTabContent, MDBTabPane } from 'mdbreact';
 import React, { useEffect, useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import AuthHeader from '../services/authHeader';
 import UserServices from '../services/user.services';
 
@@ -18,21 +19,21 @@ const Timetable = (props) => {
   return (
     <>
       <MDBListGroup>
-        <MDBNav className="nav-tabs mt-5">
+        <MDBNav className={isMobile? "nav-tabs nav-tabs-mobile mt-2": "nav-tabs mt-5"}>
           <MDBNavItem>
-            <MDBNavLink link to="#" active={activeDay === "monday"} onClick={() => setActiveDay("monday")} role="tab" >Monday</MDBNavLink>
+            <MDBNavLink className={isMobile ? "mobile-tab-font" : ""} link to="#" active={activeDay === "monday"} onClick={() => setActiveDay("monday")} role="tab" >Monday</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink link to="#" active={activeDay === "tuesday"} onClick={() => setActiveDay("tuesday")} role="tab" >Tuesday</MDBNavLink>
+            <MDBNavLink className={isMobile ? "mobile-tab-font" : ""} link to="#" active={activeDay === "tuesday"} onClick={() => setActiveDay("tuesday")} role="tab" >Tuesday</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink link to="#" active={activeDay === "wednesday"} onClick={() => setActiveDay("wednesday")} role="tab" >Wednesday</MDBNavLink>
+            <MDBNavLink className={isMobile ? "mobile-tab-font" : ""} link to="#" active={activeDay === "wednesday"} onClick={() => setActiveDay("wednesday")} role="tab" >Wednesday</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink link to="#" active={activeDay === "thursday"} onClick={() => setActiveDay("thursday")} role="tab" >Thursday</MDBNavLink>
+            <MDBNavLink className={isMobile ? "mobile-tab-font" : ""} link to="#" active={activeDay === "thursday"} onClick={() => setActiveDay("thursday")} role="tab" >Thursday</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink link to="#" active={activeDay === "friday"} onClick={() => setActiveDay("friday")} role="tab" >Friday</MDBNavLink>
+            <MDBNavLink className={isMobile ? "mobile-tab-font" : ""} link to="#" active={activeDay === "friday"} onClick={() => setActiveDay("friday")} role="tab" >Friday</MDBNavLink>
           </MDBNavItem>
         </MDBNav>
         <MDBTabContent activeItem={activeDay} >

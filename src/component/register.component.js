@@ -93,7 +93,7 @@ function RegisterComponent() {
         >
           <MDBCarouselInner>
             <MDBCarouselItem itemId="1">
-              <MDBView className="bg-white car-height">
+              <MDBView className="bg-transparent car-height">
                 <MDBInput
                   className={isMobile ? "mobile-input" : ""}
                   label="School Email"
@@ -124,7 +124,7 @@ function RegisterComponent() {
             </MDBCarouselItem>
 
             <MDBCarouselItem itemId="2">
-              <MDBView className="bg-white car-height">
+              <MDBView className="bg-transparent car-height">
                 <div className="md-form form-group">
                   <select className={isMobile ? "browser-default custom-select mobile-select" : "browser-default custom-select"} value={college} onChange={e => setCollege(e.target.value)}>
                     <option>Select Your College</option>
@@ -171,7 +171,7 @@ function RegisterComponent() {
             </MDBCarouselItem>
 
             <MDBCarouselItem itemId="3">
-              <MDBView className="bg-white car-height">
+              <MDBView className="bg-transparent car-height">
                 <div className="md-form form-group">
                   <select className={isMobile ? "browser-default custom-select mobile-select" : "browser-default custom-select"} value={level} onChange={e => setLevel(e.target.value)}>
                     <option>Select Your Level</option>
@@ -206,7 +206,7 @@ function RegisterComponent() {
         <div className="text-center w-100 mt-3">
           <MDBBtn
             color="primary"
-            className={isMobile ? "no-shadow fw-bold w-100 btn-xl-form" : "no-shadow fw-bold"}
+            className={isMobile ? "no-shadow fw-bold w-100" : "no-shadow fw-bold"}
             type="submit"
             disabled={loading}
           >
@@ -220,6 +220,7 @@ function RegisterComponent() {
           </MDBBtn>
         </div>
       </form>
+      <div className="w-100 text-center mt-1">Already have an account? <a className="w-100 text-left" href="/login"><u>Sign In</u></a></div>
     </>
   )
 }

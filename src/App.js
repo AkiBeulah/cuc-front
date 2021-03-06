@@ -9,10 +9,11 @@ import Auth from './pages/auth'
 import Dashboard from './pages/dashboard'
 import Home from './pages/home'
 
+import {BrowserView} from 'react-device-detect'
+
 export default function App() {
-  const [activeItem, setActiveItem] = useState(localStorage.getItem("activeItem") === null ? "dashboard" : localStorage.getItem("activeItem"))
+  const [activeItem, setActiveItem] = useState(localStorage.getItem("activeItem") === null ? "announcements" : localStorage.getItem("activeItem"))
   const [isSideOpen, setIsSideOpen] = useState(false)
-  const [overlayStyles, setOverlayStyles] = useState("")
   const [settingsModal, setSettingsModal] = useState(false)
   const [student, setStudent] = useState(JSON.parse(localStorage.getItem(process.env.REACT_APP_USER)))
 
@@ -26,8 +27,10 @@ export default function App() {
             isSideOpen={isSideOpen} setIsSideOpen={(bool) => setIsSideOpen(bool)}
             settingsModal={settingsModal} setSettingsModal={(bool) => setSettingsModal(bool)}
           />
-          <div onClick={() => setIsSideOpen(false)} id="overlay" className={isSideOpen ? "overlay overlay-active" : "overlay"} /> 
-        <Switch>
+          <BrowserView>
+            <div onClick={() => setIsSideOpen(false)} id="overlay" className={isSideOpen ? "overlay overlay-active" : "overlay"} />
+          </BrowserView>
+          <Switch>
             <Route exact path={["/", "/home"]} render={() => <Home />} />
             <Route exact path={["/signin", "/login", "/register", "/signup"]} render={() => <Auth />} />
             <Route exact path={["/student", "/student/:location"]} render={() => <Dashboard
@@ -36,7 +39,7 @@ export default function App() {
               settingsModal={settingsModal} setSettingsModal={(bool) => setSettingsModal(bool)}
             />} />
             <Route exact path={["/lecturer", "/lecturer/:location"]} render={() => <Dashboard activeItem={activeItem} />} />
-            <Route exact path={["/logout"]} render={() => <Logout />} />
+            <Route exact path={["/logout"]} render={() => <Logout setStudent={setStudent} />} />
           </Switch>
         </Router>
       </div>

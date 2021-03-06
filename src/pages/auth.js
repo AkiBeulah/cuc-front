@@ -43,7 +43,7 @@ const Auth = () => {
 
       <MobileView>
         <MDBContainer className="page-size-x-header-mobile d-flex flex-column justify-content-center align-items-center" >
-          <img src={CULogo} style={{ width: "400px" }} alt="CULOGO" />
+          <img src={CULogo} style={{ width: "150px", marginTop: "1rem" }} alt="CULOGO" />
           {component}
         </MDBContainer>
       </MobileView>
