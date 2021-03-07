@@ -270,7 +270,7 @@ const Header = (props) => {
                           <div role="tab" onClick={() => setActiveItem("query")} className={props.activeItem === "query" ? "active cursor-pointer animate h6 pt-0 pb-3 pl-2" : "h6 cursor-pointer animate pt-1 pb-3 pl-2"}><MDBIcon className="pr-3 pt-3" icon="search" /></div>
                           <div role="tab" onClick={() => setActiveItem("timetable")} className={props.activeItem === "timetable" ? "active cursor-pointer animate h6 pt-0 pb-3 pl-2" : "h6 cursor-pointer animate pt-1 pb-3 pl-2"}><MDBIcon className="pr-3 pt-3" icon="calendar" /></div>
                           <div role="tab" onClick={() => setActiveItem("cupay")} className={props.activeItem === "cupay" ? "active cursor-pointer animate h6 pt-0 pb-3 pl-2" : "h6 cursor-pointer animate pt-1 pb-3 pl-2"}><MDBIcon className="pr-3 pt-3" icon="coins" /></div>
-                          <div role="tab" onClick={() => setActiveItem("messages")} className={props.activeItem === "messages" ? "active cursor-pointer animate h6 pt-0 pb-3 pl-2" : "h6 cursor-pointer animate pt-1 pb-3 pl-2"}><MDBIcon className="pr-3 pt-3" icon="envelope" />Messages</div>
+                          <div role="tab" onClick={() => setActiveItem("messages")} className={props.activeItem === "messages" ? "active cursor-pointer animate h6 pt-0 pb-3 pl-2" : "h6 cursor-pointer animate pt-1 pb-3 pl-2"}><MDBIcon className="pr-3 pt-3" icon="envelope" /></div>
                         </>
                     }
                   </div>

@@ -9,7 +9,7 @@ import Auth from './pages/auth'
 import Dashboard from './pages/dashboard'
 import Home from './pages/home'
 
-import {BrowserView} from 'react-device-detect'
+import { BrowserView } from 'react-device-detect'
 
 export default function App() {
   const [activeItem, setActiveItem] = useState(localStorage.getItem("activeItem") === null ? "announcements" : localStorage.getItem("activeItem"))
@@ -21,12 +21,14 @@ export default function App() {
     <>
       <div className="housing" >
         <Router basename={"/"}>
-          <Header
-            student={student}
-            activeItem={activeItem} setActiveItem={(num) => setActiveItem(num)}
-            isSideOpen={isSideOpen} setIsSideOpen={(bool) => setIsSideOpen(bool)}
-            settingsModal={settingsModal} setSettingsModal={(bool) => setSettingsModal(bool)}
-          />
+          {document.location.href.match(/register|login|signin|signup/) ? <></> :
+            <Header
+              student={student}
+              activeItem={activeItem} setActiveItem={(num) => setActiveItem(num)}
+              isSideOpen={isSideOpen} setIsSideOpen={(bool) => setIsSideOpen(bool)}
+              settingsModal={settingsModal} setSettingsModal={(bool) => setSettingsModal(bool)}
+            />
+          }
           <BrowserView>
             <div onClick={() => setIsSideOpen(false)} id="overlay" className={isSideOpen ? "overlay overlay-active" : "overlay"} />
           </BrowserView>

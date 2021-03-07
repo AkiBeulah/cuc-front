@@ -27,8 +27,8 @@ class authHeader {
   }
 
   getApiUrl() {
-    return 'http://localhost:3001'
-    // return 'https://cov-uni-con-api.herokuapp.com/'
+    // return 'http://localhost:3001'
+    return 'https://cov-uni-con-api.herokuapp.com/'
   }
 }
 
